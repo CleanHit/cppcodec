@@ -10,7 +10,7 @@ matrix:
     # Newest GCC to oldest
     - os: linux
       #dist: bionic
-      compiler: gcc-10
+      compiler: gcc
       addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test' ]
@@ -19,7 +19,7 @@ matrix:
 
     - os: linux
       dist: bionic
-      compiler: gcc-9
+      compiler: gcc
       addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test' ]
@@ -28,7 +28,7 @@ matrix:
 
     - os: linux
       dist: xenial
-      compiler: gcc-8
+      compiler: gcc
       addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test' ]
