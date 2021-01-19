@@ -33,7 +33,7 @@ matrix:
       env: BUILD_TYPE=Debug GXX=7
 
     - os: linux
-      #dist: xenial
+      dist: bionic
       compiler: gcc
       addons:
         apt:
@@ -42,7 +42,7 @@ matrix:
       env: BUILD_TYPE=MinSizeRel GXX=6 CXX_STD=14
 
     - os: linux
-      #dist: xenial
+      dist: bionic
       compiler: gcc
       addons:
         apt:
@@ -51,7 +51,7 @@ matrix:
       env: BUILD_TYPE=Release GXX=5
 
     - os: linux
-      #dist: trusty
+      dist: bionic
       compiler: gcc
       addons:
         apt:
@@ -60,7 +60,7 @@ matrix:
       env: BUILD_TYPE=MinSizeRel GXX=4.9
 
     - os: linux
-      #dist: trusty
+      dist: bionic
       compiler: gcc
       addons:
         apt:
@@ -69,7 +69,7 @@ matrix:
       env: BUILD_TYPE=Release GXX=4.8
     
     - os: linux
-      #dist: trusty
+      dist: bionic
       compiler: gcc
       addons:
         apt:
@@ -104,7 +104,7 @@ matrix:
       addons:
         apt:
           #sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-5.0' ]
-          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-focal-5.0' ]
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-bionic-5.0' ]
           packages: [ 'clang-5.0' ]
       env: BUILD_TYPE=Release CLANGXX=5.0
 
@@ -114,12 +114,12 @@ matrix:
       addons:
         apt:
           #sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-4.0' ]
-          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-focal-4.0' ]
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-bionic-4.0' ]
           packages: [ 'clang-4.0' ]
       env: BUILD_TYPE=MinSizeRel CLANGXX=4.0
 
     - os: linux
-      #dist: trusty
+      dist: bionic
       compiler: clang
       addons:
         apt:
@@ -129,7 +129,7 @@ matrix:
       env: BUILD_TYPE=Debug CLANGXX=3.6 CXX_STD=14
 
     - os: linux
-      #dist: trusty
+      dist: bionic
       compiler: clang
       addons:
         apt:
