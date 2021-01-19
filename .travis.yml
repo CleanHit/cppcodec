@@ -98,7 +98,7 @@ matrix:
           packages: [ 'clang-6.0', 'libstdc++-7-dev', 'libstdc++6' ] # C++17 support in libstd++
       env: BUILD_TYPE=Release CLANGXX=6.0 CXX_STD=17
     
-      - os: linux
+    - os: linux
       dist: xenial
       compiler: clang
       addons:
