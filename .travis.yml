@@ -99,7 +99,7 @@ matrix:
       env: BUILD_TYPE=Release CLANGXX=6.0 CXX_STD=17
     
     - os: linux
-      #dist: xenial
+      dist: xenial
       compiler: clang
       addons:
         apt:
@@ -109,7 +109,7 @@ matrix:
       env: BUILD_TYPE=Release CLANGXX=5.0
 
     - os: linux
-      #dist: xenial
+      dist: xenial
       compiler: clang
       addons:
         apt:
