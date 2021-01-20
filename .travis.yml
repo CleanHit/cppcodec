@@ -9,7 +9,7 @@ matrix:
   include:
     # Newest GCC to oldest
     - os: linux
-      #dist: bionic
+      dist: focal
       compiler: gcc-10
       env: TOOLSET=gcc COMPILER=g++-10 CXXSTD=03,11,14,17,20
       addons:
@@ -20,7 +20,7 @@ matrix:
             - sourceline: "ppa:ubuntu-toolchain-r/test"
 
     - os: linux
-      #dist: bionic
+      dist: focal
       compiler: gcc
       addons:
         apt:
@@ -117,9 +117,9 @@ matrix:
 
     # Newest Clang to oldest
     - os: linux
-      #dist: focal
-      compiler: clang-UBSAN
-      env: UBSAN=1 TOOLSET=clang COMPILER=clang++-10 CXXSTD=03,11,14,17,20 UBSAN_OPTIONS=print_stacktrace=1
+      dist: focal
+      compiler: clang-10
+      env: TOOLSET=clang COMPILER=clang++-10 CXXSTD=03,11,14,17,20
       addons:
         apt:
           packages:
