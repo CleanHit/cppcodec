@@ -9,12 +9,12 @@ matrix:
   include:
     # Newest GCC to oldest
     - os: linux
-      dist: trusty
+      dist: focal
       name: clang-7 C++
       compiler: [ clang ]
       addons:
         apt:
-          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-7' ]
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-focal-7' ]
           packages: [ 'clang-7' , 'libstdc++-8-dev' ]
       env: BUILD_TYPE=Debug CLANGXX=7 CXX_STD=11
 
