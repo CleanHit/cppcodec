@@ -148,11 +148,12 @@ matrix:
     
     - os: linux
       dist: xenial
-      compiler: clang-7
+      name: clang-7
+      compiler: [ clang ]
       addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-7 main' ]
-          packages: [ 'clang-7' , 'libstdc++-7-dev' ]
+          packages: [ 'clang-7' , 'libstdc++-6-dev' ]
       env: BUILD_TYPE=Debug CLANGXX=7 CXX_STD=11
 
     - os: linux
@@ -161,17 +162,17 @@ matrix:
       addons:
         apt:
           #sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-6.0' ]
-          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-focal-6.0 main' ]
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-6.0 main' ]
           packages: [ 'clang-6.0', 'libstdc++-7-dev', 'libstdc++6' ] # C++17 support in libstd++
       env: BUILD_TYPE=MinSizeRel CLANGXX=6.0 CXX_STD=17
 
     - os: linux
-      #dist: xenial
+      dist: xenial
       compiler: clang-6
       addons:
         apt:
           #sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-6.0' ]
-          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-focal-6.0 main' ]
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-6.0 main' ]
           packages: [ 'clang-6.0', 'libstdc++-7-dev', 'libstdc++6' ] # C++17 support in libstd++
       env: BUILD_TYPE=Release CLANGXX=6.0 CXX_STD=17
     
@@ -210,7 +211,7 @@ matrix:
       compiler: clang-3.6
       addons:
         apt:
-          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.6' ]
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-3.6 main' ]
           #sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-3.6' ]
           packages: [ 'clang-3.6' ]
       env: BUILD_TYPE=Release CLANGXX=3.6   
