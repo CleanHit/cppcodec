@@ -9,14 +9,210 @@ matrix:
   include:
     # Newest GCC to oldest
     - os: linux
+      dist: focal
+      name: gcc-10 C++ focal
+      compiler: [ gcc ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-10' ]
+      env: BUILD_TYPE=Debug GXX=10 CXX_STD=20
+
+    - os: linux
+      dist: bionic
+      name: gcc-9 C++ bionic
+      compiler: [ gcc ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-9' ]
+      env: BUILD_TYPE=Release GXX=9 CXX_STD=17
+
+    - os: linux
+      dist: xenial
+      name: gcc-8 C++ xenial
+      compiler: [ gcc ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-8' ]
+      env: BUILD_TYPE=MinSizeRel GXX=8 CXX_STD=14
+
+    - os: linux
+      dist: focal
+      name: gcc-7 C++ focal
+      compiler: [ gcc ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-7' ]
+      env: BUILD_TYPE=MinSizeRel GXX=7 CXX_STD=17
+
+    - os: linux
+      dist: focal
+      name: gcc-7 C++ focal
+      compiler: [ gcc ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-7' ]
+      env: BUILD_TYPE=Release GXX=7 CXX_STD=17
+    
+    - os: linux
+      dist: focal
+      name: gcc-7 C++ focal
+      compiler: [ gcc ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-7' ]
+      env: BUILD_TYPE=Debug GXX=7
+
+    - os: linux
+      dist: bionic
+      name: gcc-6 C++ bionic
+      compiler: [ gcc ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-6' ]
+      env: BUILD_TYPE=MinSizeRel GXX=6 CXX_STD=14
+
+    - os: linux
+      dist: bionic
+      name: gcc-5 C++ bionic
+      compiler: [ gcc ]      
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-5' ]
+      env: BUILD_TYPE=Release GXX=5
+
+    - os: linux
+      dist: xenial
+      name: gcc-4.9 C++ xenial
+      compiler: [ gcc ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-4.9' ]
+      env: BUILD_TYPE=MinSizeRel GXX=4.9
+
+    - os: linux
+      dist: bionic
+      name: gcc-4.8 C++ bionic
+      compiler: [ gcc ]      
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-4.8' ]
+      env: BUILD_TYPE=Release GXX=4.8
+    
+    - os: linux
+      dist: bionic
+      name: gcc-4.8 C++ bionic
+      compiler: [ gcc ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test' ]
+          packages: [ 'g++-4.8' ]
+      env: BUILD_TYPE=Debug GXX=4.8
+
+    # Newest Clang to oldest
+    - os: linux
+      dist: focal
+      name: clang-10 C++ focal
+      compiler: [ clang ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-10 main' ]
+          packages: [ 'clang-10', 'libstdc++-10-dev' ]
+      env: BUILD_TYPE=Debug CLANGXX=10 CXX_STD=20
+
+    - os: linux
+      dist: bionic
+      name: clang-9 C++ bionic
+      compiler: [ clang ]      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-9 main' ]
+          packages: [ 'clang-9', 'libstdc++-9-dev' ]
+      env: BUILD_TYPE=MinSizeRel CLANGXX=9 CXX_STD=17
+
+    - os: linux
+      dist: xenial
+      name: clang-8 C++ xenial
+      compiler: [ clang ]      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-8 main' ]
+          packages: [ 'clang-8', 'libstdc++-8-dev' ]
+      env: BUILD_TYPE=Release CLANGXX=8 CXX_STD=14
+    
+    - os: linux
       dist: bionic
       name: clang-7 C++ bionic
       compiler: [ clang ]
       addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-bionic-7 main' ]
-          packages: [ 'clang-7' , 'libstdc++-8-dev' ]
+          packages: [ 'clang-7', 'libstdc++-8-dev' ]
       env: BUILD_TYPE=Debug CLANGXX=7 CXX_STD=11
+
+    - os: linux
+      dist: xenial
+      name: clang-6 C++ xenial
+      compiler: [ clang ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-6.0 main' ]
+          packages: [ 'clang-6.0', 'libstdc++-7-dev', 'libstdc++6' ] # C++17 support in libstd++
+      env: BUILD_TYPE=MinSizeRel CLANGXX=6.0 CXX_STD=17
+
+    - os: linux
+      dist: xenial
+      name: clang-6 C++ xenial
+      compiler: [ clang ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-6.0 main' ]
+          packages: [ 'clang-6.0', 'libstdc++-7-dev', 'libstdc++6' ] # C++17 support in libstd++
+      env: BUILD_TYPE=Release CLANGXX=6.0 CXX_STD=17
+    
+    - os: linux
+      dist: xenial
+      name: clang-5 C++ xenial
+      compiler: [ clang ]
+      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-5.0 main' ]
+          packages: [ 'clang-5.0' ]
+      env: BUILD_TYPE=Release CLANGXX=5.0
+
+    - os: linux
+      dist: xenial
+      name: clang-4 C++ xenial
+      compiler: [ clang ]      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-4.0 main' ]
+          packages: [ 'clang-4.0' ]
+      env: BUILD_TYPE=MinSizeRel CLANGXX=4.0
+
+    - os: linux
+      dist: xenial
+      name: clang-3.6 C++ xenial
+      compiler: [ clang ]      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-3.6 main' ]
+          packages: [ 'clang-3.6' ]
+      env: BUILD_TYPE=Debug CLANGXX=3.6 CXX_STD=14
+
+    - os: linux
+      dist: xenial
+      name: clang-3.6 C++ xenial
+      compiler: [ clang ]      addons:
+        apt:
+          sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-3.6 main' ]
+          packages: [ 'clang-3.6' ]
+      env: BUILD_TYPE=Release CLANGXX=3.6   
 
 # container-based builds
 sudo: false
