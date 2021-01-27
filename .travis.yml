@@ -132,7 +132,8 @@ matrix:
     - os: linux
       dist: bionic
       name: clang-9 C++ bionic
-      compiler: [ clang ]      addons:
+      compiler: [ clang ]
+      addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-9 main' ]
           packages: [ 'clang-9', 'libstdc++-9-dev' ]
@@ -141,7 +142,8 @@ matrix:
     - os: linux
       dist: xenial
       name: clang-8 C++ xenial
-      compiler: [ clang ]      addons:
+      compiler: [ clang ]
+      addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-8 main' ]
           packages: [ 'clang-8', 'libstdc++-8-dev' ]
@@ -190,7 +192,8 @@ matrix:
     - os: linux
       dist: xenial
       name: clang-4 C++ xenial
-      compiler: [ clang ]      addons:
+      compiler: [ clang ]
+      addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-4.0 main' ]
           packages: [ 'clang-4.0' ]
@@ -199,7 +202,8 @@ matrix:
     - os: linux
       dist: xenial
       name: clang-3.6 C++ xenial
-      compiler: [ clang ]      addons:
+      compiler: [ clang ]
+      addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-3.6 main' ]
           packages: [ 'clang-3.6' ]
@@ -208,7 +212,8 @@ matrix:
     - os: linux
       dist: xenial
       name: clang-3.6 C++ xenial
-      compiler: [ clang ]      addons:
+      compiler: [ clang ]
+      addons:
         apt:
           sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-xenial-3.6 main' ]
           packages: [ 'clang-3.6' ]
