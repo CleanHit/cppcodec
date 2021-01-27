@@ -10,7 +10,7 @@ matrix:
     # Newest GCC to oldest
     - os: linux
       dist: bionic
-      name: clang-7 C++
+      name: clang-7 C++ bionic
       compiler: [ clang ]
       addons:
         apt:
