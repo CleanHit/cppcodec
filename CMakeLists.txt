@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.13...4.0)
 project(cppcodec CXX)
 set(PROJECT_VERSION 0.3)
 
